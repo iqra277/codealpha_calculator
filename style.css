@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  background: linear-gradient(135deg, #1e1b4b, #312e81 45%, #0f172a);
+  padding: 16px;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 360px;
+  padding: 20px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+}
+
+.display {
+  min-height: 110px;
+  padding: 16px;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.history {
+  min-height: 22px;
+  font-size: 1rem;
+  color: #a5b4fc;
+}
+
+.result {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: right;
+  line-height: 1.2;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.key {
+  height: 64px;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.key:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.key:active,
+.key.pressed {
+  transform: scale(0.93);
+}
+
+.key.function {
+  background: rgba(165, 180, 252, 0.25);
+  color: #e0e7ff;
+}
+
+.key.operator {
+  background: #6366f1;
+}
+
+.key.operator:hover {
+  background: #818cf8;
+}
+
+.key.operator.active {
+  background: #fff;
+  color: #4338ca;
+}
+
+.key.equals {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+.key.equals:hover {
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.6);
+}
+
+.hint {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+@media (max-width: 380px) {
+  .key { height: 56px; font-size: 1.2rem; }
+  .result { font-size: 2.1rem; }
+}
